@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/image', '@prisma/nuxt', '@nuxtjs/tailwindcss'],
+  modules: ['@nuxt/image', '@prisma/nuxt', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode'],
 
   // prisma: {
   //   schema: './prisma/schema.prisma',

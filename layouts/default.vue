@@ -19,7 +19,7 @@
 					<button @click="toggleDarkMode()"
 						class="p-2 rounded-lg text-white hover:bg-blue-600 dark:hover:bg-blue-800 transition-colors duration-200"
 					>
-						<div v-if="isDark">
+						<div v-if="$colorMode.preference === 'Dark'">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								class="h-6 w-6"
@@ -135,20 +135,18 @@
 
 <script setup lang="ts">
 
-const isDark = ref(false);
+const colorMode = useColorMode()
 
-onMounted(() => {
-    toggleDarkMode();
-});
+console.log(colorMode.preference)
 
 function toggleDarkMode() {
-    isDark.value = !isDark.value
-    if (isDark.value) {
-        window.document.documentElement.classList.add('dark')
-    } else {
-        window.document.documentElement.classList.remove('dark')
-    }
+
+	console.log(colorMode.preference)
+	
+    if (colorMode.preference === 'Dark') {
+		colorMode.preference = 'Light'
+	} else {
+		colorMode.preference = 'Dark'
+	}
 }
-
-
 </script>
