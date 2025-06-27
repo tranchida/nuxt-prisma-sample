@@ -12,57 +12,15 @@
 						</a>
 					</div>
 					<div class="flex items-center space-x-4">
-					<button @click="toggleTheme()"
-						class="p-2 rounded-lg text-white hover:bg-blue-600 dark:hover:bg-blue-800 transition-colors duration-200"
-					>
-						<div v-if="colorMode.preference === 'dark'">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="h-6 w-6"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-								/>
-							</svg>
-                        </div>
-						<div v-else>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="h-6 w-6"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-								/>
-							</svg>
-						</div>
-					</button>
-						<NuxtLink href="/"
-							class="text-white hover:text-blue-600 dark:hover:text-blue-300 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 {page.url.pathname === '/' ? 'bg-blue-600 dark:bg-blue-800' : ''}"
-							active-class="bg-blue-600 dark:bg-blue-800">
-							Home
-						</NuxtLink>
-						<NuxtLink href="/admin"
-							class="text-white hover:text-blue-600 dark:hover:text-blue-300 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 {page.url.pathname === '/admin' ? 'bg-blue-600 dark:bg-blue-800' : ''}"
-							active-class="bg-blue-600 dark:bg-blue-800">
-							Admin
-						</NuxtLink>
-						<NuxtLink href="/about"
-							class="text-white hover:text-blue-600 dark:hover:text-blue-300 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 {page.url.pathname === '/about' ? 'bg-blue-600 dark:bg-blue-800' : ''}"
-							active-class="bg-blue-600 dark:bg-blue-800">
-							About
-						</NuxtLink>
+						<ClientOnly v-if="!colorMode?.forced">
+							<UButton :icon="isDark ? 'lucide:moon' : 'lucide:sun'" color="neutral" variant="ghost"
+								@click="isDark = !isDark" />
+
+							<template #fallback>
+								<div class="size-8" />
+							</template>
+						</ClientOnly>
+						<UNavigationMenu :items="items" class="w-full justify-center" />
 					</div>
 
 				</div>
@@ -109,17 +67,39 @@
 
 
 <script setup lang="ts">
+import type { NavigationMenuItem } from '@nuxt/ui'
 
-const colorMode = useColorMode();
-const toggleTheme = () => {
-	colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark';
-};
 
-/*
-useHead({
-  htmlAttrs: {
-    class: () => colorMode.value
-  }
+const colorMode = useColorMode()
+
+const isDark = computed({
+	get() {
+		return colorMode.value === 'dark'
+	},
+	set(_isDark) {
+		colorMode.preference = _isDark ? 'dark' : 'light'
+	}
 })
-*/
+
+
+const items = ref<NavigationMenuItem[]>([
+	{
+		title: 'Home',
+		href: '/',
+		label: 'Home',
+		icon: 'lucide:home',
+	},
+	{
+		title: 'Admin',
+		href: '/admin',
+		label: 'Admin',
+		icon: 'lucide:user-cog',
+	},
+	{
+		title: 'About',
+		href: '/about',
+		label: 'About',
+		icon: 'lucide:info',
+	},
+])
 </script>

@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/image', '@prisma/nuxt', '@nuxtjs/tailwindcss', '@nuxt/ui'],
+  modules: ['@nuxt/image', '@prisma/nuxt', '@nuxt/ui'],
   css: ['~/assets/css/main.css'],
   colorMode: {
     preference: 'black', // default theme

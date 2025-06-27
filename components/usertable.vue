@@ -25,16 +25,16 @@
                         <td class="p-3">{{user.employed}}</td>
                         <td class="p-3"><NuxtTime :datetime="user.updatedAt" /></td>
                         <td class="p-3">
-                            <span
-                                :class="['transition-colors duration-1000', user.active ? 'text-green-500' : 'text-red-500']">
+                            <UBadge
+                                size="xl"
+                                :class="['text-white transition-colors duration-1000', user.active ? 'bg-green-500' : 'bg-red-500']">
                                 {{ user.active ? 'Yes' : 'No' }}
-                            </span>
+                            </UBadge>
                         </td>
                         <td class="p-3">
-                            <button @click="switchState(user.id)" :disabled="status === 'pending'"
-                                class="bg-black text-white px-4 py-2 rounded-md hover:bg-indigo-600 hover:cursor-pointer transition-colors duration-300 disabled:opacity-40 disabled:cursor-not-allowed">
-                                &#128259; active
-                            </button>
+                            <UButton color="secondary" icon="lucide:arrow-right-left" @click="switchState(user.id)" :disabled="status === 'pending'">
+                                active
+                            </UButton>
                         </td>
                     </tr>
                 </tbody>

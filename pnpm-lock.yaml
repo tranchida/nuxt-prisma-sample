@@ -26,9 +26,6 @@ importers:
       tailwindcss:
         specifier: ^4.1.11
         version: 4.1.11
-      tsx:
-        specifier: ^4.20.3
-        version: 4.20.3
       vue:
         specifier: ^3.5.17
         version: 3.5.17(typescript@5.8.3)
@@ -36,12 +33,15 @@ importers:
         specifier: ^4.5.1
         version: 4.5.1(vue@3.5.17(typescript@5.8.3))
     devDependencies:
-      '@nuxtjs/tailwindcss':
-        specifier: 7.0.0-beta.0
-        version: 7.0.0-beta.0(magicast@0.3.5)(vite@6.3.5(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0))
+      '@iconify-json/lucide':
+        specifier: ^1.2.52
+        version: 1.2.52
       prisma:
         specifier: 6.10.1
         version: 6.10.1(typescript@5.8.3)
+      tsx:
+        specifier: ^4.20.3
+        version: 4.20.3
 
 packages:
 
@@ -375,6 +375,9 @@ packages:
   '@floating-ui/vue@1.1.6':
     resolution: {integrity: sha512-XFlUzGHGv12zbgHNk5FN2mUB7ROul3oG2ENdTpWdE+qMFxyNxWSRmsoyhiEnpmabNm6WnUvR1OvJfUfN4ojC1A==}
 
+  '@iconify-json/lucide@1.2.52':
+    resolution: {integrity: sha512-MUFX9bB2XL7ugvUgEj8ftSJfamL1fp0Yp/oGLoLvCy8BC1vX0Z/a6TWHtqidSX4P3ERmDC2pqRwwuSTyZePdrA==}
+
   '@iconify/collections@1.0.562':
     resolution: {integrity: sha512-fNGc0xWMInNR3snWMCq6jvrydZTmeRai0u2pEq2gqVrsu51nNBJ10Fgc4lLnDtwN0rcHfIHl8OWxVk6hRMxeNQ==}
 
@@ -576,9 +579,6 @@ packages:
 
   '@nuxtjs/color-mode@3.5.2':
     resolution: {integrity: sha512-cC6RfgZh3guHBMLLjrBB2Uti5eUoGM9KyauOaYS9ETmxNWBMTvpgjvSiSJp1OFljIXPIqVTJ3xtJpSNZiO3ZaA==}
-
-  '@nuxtjs/tailwindcss@7.0.0-beta.0':
-    resolution: {integrity: sha512-0I7RBg6KUC6TqUpaUSJTuhoE5aV1m9QAjDuHa5+6van+DG0kYSeLSKSpSl//l/tboxQ02Zq5TPNqwVCeCy+JTA==}
 
   '@oxc-parser/binding-darwin-arm64@0.72.3':
     resolution: {integrity: sha512-g6wgcfL7At4wHNHutl0NmPZTAju+cUSmSX5WGUMyTJmozRzhx8E9a2KL4rTqNJPwEpbCFrgC29qX9f4fpDnUpA==}
@@ -4553,6 +4553,10 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
+  '@iconify-json/lucide@1.2.52':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify/collections@1.0.562':
     dependencies:
       '@iconify/types': 2.0.0
@@ -5161,17 +5165,6 @@ snapshots:
       semver: 7.7.2
     transitivePeerDependencies:
       - magicast
-
-  '@nuxtjs/tailwindcss@7.0.0-beta.0(magicast@0.3.5)(vite@6.3.5(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0))':
-    dependencies:
-      '@nuxt/kit': 3.17.5(magicast@0.3.5)
-      '@tailwindcss/postcss': 4.1.11
-      '@tailwindcss/vite': 4.1.11(vite@6.3.5(@types/node@24.0.4)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0))
-      pathe: 2.0.3
-      tailwindcss: 4.1.11
-    transitivePeerDependencies:
-      - magicast
-      - vite
 
   '@oxc-parser/binding-darwin-arm64@0.72.3':
     optional: true
