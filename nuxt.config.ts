@@ -9,6 +9,9 @@ export default defineNuxtConfig({
     fallback: 'light', // fallback theme
     classSuffix: ''
   },
+  ui: {
+    fonts: false
+  }
   // prisma: {
   //   schema: './prisma/schema.prisma',
   // },

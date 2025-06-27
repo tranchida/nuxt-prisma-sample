@@ -32,7 +32,7 @@
                             </UBadge>
                         </td>
                         <td class="p-3">
-                            <UButton color="secondary" icon="lucide:arrow-right-left" @click="switchState(user.id)" :disabled="status === 'pending'">
+                            <UButton color="secondary" icon="lucide-arrow-right-left" @click="switchState(user.id)" :disabled="status === 'pending'">
                                 active
                             </UButton>
                         </td>

@@ -1,6 +1,6 @@
 <template>
 	<div class="min-h-screen flex flex-col">
-		<nav class="bg-blue-500 dark:bg-blue-900 mt-auto sticky top-0">
+		<nav class="bg-blue-500 dark:bg-blue-900 sticky top-0 z-50">
 			<div class="flex justify-between h-16">
 				<div class="flex items-center space-x-1">
 					<a href="/">
