@@ -29,6 +29,11 @@
 		</main>
 		<footer class="bg-gray-100 dark:bg-gray-800 mt-auto sticky bottom-0">
 			<div class="flex justify-between h-16">
+				<div class="flex items-center">
+					©&nbsp;<NuxtTime year="numeric" :datetime="Date.now()" />
+					&nbsp;Nuxt-Prisma-Sample version 1.0.0. Tous droits
+					réservés.
+				</div>
 				<div class="flex items-center space-x-4">
 					<ULink href="https://x.com/gtranchida" target="_blank">
 						<UIcon name="grommet-icons:x" size="24" />
@@ -37,18 +42,10 @@
 						<UIcon name="grommet-icons:github" size="24" />
 					</ULink>
 				</div>
-				<div class="flex items-center">
-					©&nbsp;<NuxtTime year="numeric" :datetime="Date.now()" />
-					&nbsp;Nuxt-Prisma-Sample version 1.0.0. Tous droits
-					réservés.
-				</div>
-				<div class="flex items-center">
-					<p>blabla</p>
-				</div>
 			</div>
 		</footer>
 	</div>
-
+	
 </template>
 
 
