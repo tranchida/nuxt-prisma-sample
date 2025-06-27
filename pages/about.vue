@@ -15,6 +15,6 @@ const developers = computed(() => data.value ? data.value.filter(user => user.em
 const switchState = async (id: number,) => {
     await $fetch(`/api/user/switchstate/${id}`);
     title.value = "Users updated";
-    refresh();
+    await refresh();
 }
 </script>

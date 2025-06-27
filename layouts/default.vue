@@ -14,10 +14,6 @@
 					<ClientOnly v-if="!colorMode?.forced">
 						<UButton :icon="isDark ? 'lucide:moon' : 'lucide:sun'" color="neutral" variant="ghost"
 							@click="isDark = !isDark" />
-
-						<template #fallback>
-							<div class="size-8" />
-						</template>
 					</ClientOnly>
 					<UNavigationMenu :items="items" class="w-full justify-center" />
 				</div>
